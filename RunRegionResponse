@@ -1,0 +1,19 @@
+#!/usr/bin/env/RegionResponse
+
+echo Running Response Framework Data Extractor...
+
+python RegionResponse/ResponseFrameworkDataExtractor.py
+
+echo Running Cases Data Extractor...
+
+python RegionResponse/CasesDataExtractor.py data/conposcovidloc.csv
+
+echo Comparing Data...
+
+python RegionResponse/CompareData.py
+
+echo Plotting Graph...
+
+python RegionResponse/RegionResponseDataToGraph.py
+
+echo Done!

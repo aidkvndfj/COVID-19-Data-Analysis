@@ -1,0 +1,28 @@
+DISCLAIMER: All of this data is only valid from September 10th, 2020 to the last
+            day since the data file has been downloaded and updated: March 25th, 2021.
+
+The original question of "
+How does the rate of infections for students in a specific school board change over time, compared to the rate of students (0 - 13, 14 - 17) that tested positive province-wide over time?
+"
+has now been changed to "
+How does the total number of student cases since school has gone online, compare across different cities in Ontario?
+"
+
+If the user enters 'Toronto' as one of the cities, it is the ONLY outlier
+across the 100 or so cities, totaling an extremely high number of around 13000.
+
+March 25th, 2021 Update:
+    The extractConfirmedStudentCases.py script was forgetting to add the
+    actual number of student cases reported by the schools, and is now
+    accurately representing the total number of positive cases of students
+    in their respective cities.
+
+    Also, the extractConfirmedStudentCases.py script was refactored using
+    a dictionary instead of a list to be more descriptive.
+
+Commands to run for presentation (ALL FROM STUDENTCASESBYCITY) in order:
+    python ActiveSchoolCases/extractCityNames.py ActiveSchoolCases/covidData/schoolsactivecovid.csv > ActiveSchoolCases/progData/cityNames.txt
+
+    python ActiveSchoolCases/extractConfirmedStudentCases.py ActiveSchoolCases/covidData/schoolsactivecovid.csv Ajax Brampton Ottawa Mississauga > ActiveSchoolCases/progData/studentCasesPerCity.txt
+
+    python plotSchoolCases.py ActiveSchoolCases/progData/studentCasesPerCity.txt cityGraphs/graphOne.pdf

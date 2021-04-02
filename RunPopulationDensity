@@ -1,0 +1,13 @@
+#!/usr/bin/env/PopulationDensity
+
+cd PopulationDensity
+
+echo Running Data Extractor
+
+python PopulationDensityDataExtractor.py ../data/conposcovidloc.csv 2253 3895
+
+echo Creating Graph
+
+python PopulationDensityDataToGraph.py PopulationDensityCompressed.csv PopulationDensityGraph.pdf
+
+echo Done!
